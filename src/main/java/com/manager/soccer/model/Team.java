@@ -4,13 +4,25 @@ import java.util.List;
 
 public class Team {
     private String name;
+    private String country;
+    private List<Player> players;
 
-    public Team(String name, String country) {
-        this.name = name;
-        this.country = country;
-        //this.players = players;
+    public List<Player> getPlayers() {
+        return players;
     }
 
-    private String country;
-    //private List<Player> players;
+    public String getName() {
+        return name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public Team(String name, String country, List<Player> players) {
+        this.name = name;
+        this.country = country;
+        this.players = players;
+    }
+
 }
