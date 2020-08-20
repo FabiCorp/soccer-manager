@@ -11,7 +11,6 @@ public class Game {
     private Stadium stadium;
     private List<Goal> goals;
 
-
     public void simulateGame() {
         Random random = new Random();
         int time = (int) getNext(getParameter());
@@ -23,9 +22,8 @@ public class Game {
             else {
                 goals.add(new Goal(time, null, awayTeam));
             }
+            time += ((int) getNext(getParameter()));
         }
-        System.out.println(goals.size());
-        System.out.println("heyo was geht TESTVERSION1");
     }
 
     public double getParameter() {

@@ -1,8 +1,14 @@
 package com.manager.soccer.model;
 
+import org.springframework.data.annotation.Id;
+
 import java.util.List;
 
 public class Team {
+
+    @Id
+    private String id;
+
     private String name;
     private String country;
     private List<Player> players;

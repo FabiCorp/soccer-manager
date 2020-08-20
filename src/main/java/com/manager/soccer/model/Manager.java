@@ -6,19 +6,19 @@ public class Manager {
     private String firstName;
     private String lastName;
 
+    public Manager(int maxLevel, String firstName, String lastName) {
+        this.managerLevel = 0;
+        this.maxLevel = maxLevel;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getFirstName() {
         return firstName;
     }
 
     public String getLastName() {
         return lastName;
-    }
-
-    public Manager(int maxLevel, String firstName, String lastName) {
-        this.managerLevel = 0;
-        this.maxLevel = maxLevel;
-        this.firstName = firstName;
-        this.lastName = lastName;
     }
 
     public void setManagerLevel(int managerLevel) {
