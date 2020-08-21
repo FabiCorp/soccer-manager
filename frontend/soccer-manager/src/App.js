@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import requestService from './requests/RequestService';
+import NavTable from './NavTable/NavTable';
 import './App.css';
 
 const callbackResponse = playerArray => {
@@ -13,14 +14,10 @@ const onButtonClick = _ => {
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button className="players-button" onClick={onButtonClick}>GET PLAYERS YOU IDIOT</button>
-      </header>
+    <div className="main">
+      <div className="navigation">
+        <NavTable/>
+      </div>
     </div>
   );
 }
