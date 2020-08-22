@@ -1,0 +1,5 @@
+.top-bar {
+    grid-row: 1;
+    grid-column: 3 / 14;
+    background-color: #979797;
+}

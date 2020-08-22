@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import requestService from './requests/RequestService';
 import NavTable from './NavTable/NavTable';
 import './App.css';
+import TopBar from './TopBar/TopBar';
 
 const callbackResponse = playerArray => {
   console.log(playerArray[0].position);
@@ -15,9 +16,8 @@ const onButtonClick = _ => {
 function App() {
   return (
     <div className="main">
-      <div className="navigation">
-        <NavTable/>
-      </div>
+      <NavTable/>
+      <TopBar/>
     </div>
   );
 }
