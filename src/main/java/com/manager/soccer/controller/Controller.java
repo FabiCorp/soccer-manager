@@ -1,10 +1,7 @@
 package com.manager.soccer.controller;
 
 import com.manager.soccer.model.*;
-import com.manager.soccer.repository.GameRepository;
-import com.manager.soccer.repository.PlayerRepository;
-import com.manager.soccer.repository.TeamRepository;
-import com.manager.soccer.repository.TrainerRepository;
+import com.manager.soccer.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,8 +27,7 @@ public class Controller {
 
     @GetMapping(value = "players")
     public ResponseEntity<List<Player>> getAllPlayers() {
-        playerRepository.save(new Player("Bla", "Bla", Position.DEFENDER));
-        return ResponseEntity.ok(playerRepository.findAll());
+        return ResponseEntity.ok(playerRepository.findAllBy());
     }
 
     @GetMapping(value = "player")
@@ -58,6 +54,8 @@ public class Controller {
     public String forwardHTML() {
         return "forward://index.html";
     }
+
+
 
 
 }
