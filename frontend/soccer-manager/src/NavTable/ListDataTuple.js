@@ -5,10 +5,12 @@ import SwapHorizontalCircleIcon from '@material-ui/icons/SwapHorizontalCircle';
 const listDataTuple = [
     {
         name: "Start",
-        icon: <HomeIcon/>
+        icon: <HomeIcon/>,
+        path: '/'
     }, {
         name: "Transfermarkt",
-        icon: <SwapHorizontalCircleIcon/>
+        icon: <SwapHorizontalCircleIcon/>,
+        path: '/transfer'
     },
 ];
 

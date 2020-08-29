@@ -11,6 +11,12 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListDataTuple from './ListDataTuple';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -38,6 +44,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const onListElementClick = path => window.location.pathname = path;
+
 export default function PermanentDrawerLeft() {
   const classes = useStyles();
 
@@ -62,17 +70,26 @@ export default function PermanentDrawerLeft() {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-          {ListDataTuple.map((dataElement, index) => (
-            <ListItem button key={dataElement.name}>
-              <ListItemIcon>{dataElement.icon}</ListItemIcon>
-              <ListItemText primary={dataElement.name} />
+          {ListDataTuple.map(dataElement => (
+            <ListItem button key={dataElement.name} onClick={ _ => onListElementClick(dataElement.path)}>
+                <ListItemIcon>{dataElement.icon}</ListItemIcon>
+                <ListItemText primary={dataElement.name} />
             </ListItem>
           ))}
         </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        
+        <Router>
+            <Switch>
+                <Route exact path="/">
+                    test
+                </Route>
+                <Route path="/transfer">
+                    transfer
+                </Route>
+            </Switch>
+        </Router>
       </main>
     </div>
   );
