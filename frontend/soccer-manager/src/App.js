@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import requestService from './requests/RequestService';
-import NavTable from './NavTable/NavTable';
+import NavTable from './drawer/NavTable';
 import './App.css';
 import TopBar from './TopBar/TopBar';
 

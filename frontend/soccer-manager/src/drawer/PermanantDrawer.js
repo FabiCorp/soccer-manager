@@ -17,12 +17,14 @@ import {
     Route,
     Link
   } from "react-router-dom";
+import Transfer from '../transfer/Transfer';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    height: '100%'
   },
   appBar: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -41,7 +43,14 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
+    height: '100%'
   },
+  mainContent: {
+    display: 'grid',
+    height: '90%',
+    gridTemplateColumns: 'repeat(12, 1fr)',
+    gridTemplateRows: 'repeat(12, 1fr)'
+  }
 }));
 
 const onListElementClick = path => window.location.pathname = path;
@@ -80,16 +89,18 @@ export default function PermanentDrawerLeft() {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Router>
-            <Switch>
-                <Route exact path="/">
-                    test
-                </Route>
-                <Route path="/transfer">
-                    transfer
-                </Route>
-            </Switch>
-        </Router>
+        <div className={classes.mainContent}>
+          <Router>
+              <Switch>
+                  <Route exact path="/">
+                      test
+                  </Route>
+                  <Route path="/transfer">
+                        <Transfer/>
+                  </Route>
+              </Switch>
+          </Router>
+        </div>
       </main>
     </div>
   );
