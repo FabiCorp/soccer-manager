@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import PermanentDrawer from './NavTable/PermanantDrawer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PermanentDrawer/>
   </React.StrictMode>,
   document.getElementById('root')
 );
