@@ -14,8 +14,7 @@ import ListDataTuple from './ListDataTuple';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
   } from "react-router-dom";
 import Transfer from '../transfer/Transfer';
 
